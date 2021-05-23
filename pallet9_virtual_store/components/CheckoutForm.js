@@ -82,8 +82,6 @@ const CheckoutForm = () => {
   const handleSubscription = (subscription) => {
     const latestInvoice = subscription;
     const paymentIntent = latestInvoice;
-    console.log(subscription);
-    console.log(typeof subscription.latest_invoice.customer_email);
     const emailMessage = {
       from: "help@carlvirtualshop.com",
       to: String(subscription.latest_invoice.customer_email),
@@ -102,7 +100,11 @@ const CheckoutForm = () => {
           }
         });
       } else {
-        alert("You have successfully subscribed to " + data);
+        alert(
+          "You have successfully subscribed to " +
+            data +
+            " and an email has been sent to your Mailtrap inbox"
+        );
         sendProductEmailToBuyer(emailMessage);
 
         document.getElementById("checkout_form").reset();
@@ -117,7 +119,6 @@ const CheckoutForm = () => {
       <Link href="/shop">
         <button>back to shop</button>
       </Link>
-      {console.log("data from selected product", data)}
       <p>Enter your card details</p>
       <p>Price: $ 0.5 / month</p>
       <form id="checkout_form" onSubmit={(e) => handleSubmit(e)}>
