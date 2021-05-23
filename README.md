@@ -14,7 +14,7 @@
 
 Since currently this project is developed in local environment, the product information is erased after the backend is shut down. Will consider upload the product information on the cloud in the future
 
-1. In `pallet9_virtual_store_backend`, run `yarn develop`, then go to `localhost:1337/admin` to register your admine
+1. In `pallet9_virtual_store_backend`, run `yarn develop`, then go to `localhost:1337/admin` to register your admin
 
 2. Go to `Products` collection type tab. Insert one image from the `image` folder (where images are stored in `pallet9_virtual_store_backend/images`), `Content`, `Meta_description`, `Meta_title`, `Price`, `Slug`, `Name`; Once finished, click `Save` and `Publish` to publish the product on the backend and then it will be used in the Frontend
    Here's a dummy information for anyone to grab into these field
