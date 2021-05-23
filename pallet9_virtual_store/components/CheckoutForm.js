@@ -36,6 +36,7 @@ const CheckoutForm = () => {
   const handleStripePaymentMethod = async (result) => {
     if (result.error) {
       alert("some error occurred in payment method");
+      return;
     }
     const response = await fetch("api/create_subscription", {
       method: "POST",
