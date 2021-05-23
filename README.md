@@ -7,12 +7,37 @@
 `pallet9_virtual_store_backend` \* this is the backend application
 
 ### requirements before start
+
 `Node` version `v14.17.0`
+
+#### a. Setting up Strapi Backend
+
+Since currently this project is developed in local environment, the product information is erased after the backend is shut down. Will consider upload the product information on the cloud in the future
+
+1. In `pallet9_virtual_store_backend`, run `yarn develop`, then go to `localhost:1337/admin` to register your admine
+
+2. Go to `Products` collection type tab. Insert one image from the `image` folder (where images are stored in `pallet9_virtual_store_backend/images`), `Content`, `Meta_description`, `Meta_title`, `Price`, `Slug`, `Name`; Once finished, click `Save` and `Publish` to publish the product on the backend and then it will be used in the Frontend
+   Here's a dummy information for anyone to grab into these field
+
+```
+Image: ./pallet9_virtual_store_backend/images/pineapple.jpeg
+Content: The pineapple product -- tasteful
+Meta_description: The pineapple product is tasteful and good
+Meta_title: The pineapple product
+Price: 5.99
+Slug: the-pineapple-product
+Name: the-pineapple-product
+
+```
+
+3. Then Go to `Settings` tab and under `Roles` in `USERS & PERMISSIONS PLUGIN`, click the edit button next to `Public`. In the `Public` role, check both `findone` and `find` under `APPLICATION` in the `Permissions` tab. Click `Save` to save the role.
 
 `Stripe` for checkout page, `Strapi`, and `Next.js`
 
-This project need to create a file called `.env.local` in the root directory of `pallet9_virtual_store`
+#### b. Setting up Next.js Frontend
 
+This project need to create a file called `.env.local` in the root directory of `pallet9_virtual_store`
+I used Mailtrap to send and receive some dummy emails to test whether it's working.
 the structure of the `.env.local` file is shown below
 
 ```
