@@ -7,6 +7,7 @@
 `pallet9_virtual_store_backend` \* this is the backend application
 
 ### requirements before start
+`Node` version `v14.17.0`
 
 `Stripe` for checkout page, `Strapi`, and `Next.js`
 
